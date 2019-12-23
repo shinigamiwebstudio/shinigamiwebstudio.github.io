@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>SHINIGAMI WEB DESIGN</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+			<div id="wrapper">
+					<header id="header">
+						<h1><a href="index.html"><strong>SHINIGAMI</strong></a></h1>
+						<nav>
+							<ul>
+								<li><a href="#footer" class="icon solid fa-info-circle">Подробнее</a></li>
+							</ul>
+						</nav>
+					</header>
+					<div id="main">
+						<article class="thumb">
+							<a href="01.jpg" class="image"><img src="01.jpg" alt="" /></a>
+							<h2>Портфолио</h2>
+							<p>(Пусто)</p>
+						</article>
+						<article class="thumb">
+							<a href="02.jpg" class="image"><img src="02.jpg" alt="" /></a>
+							<h2>Портфолио</h2>
+							<p>(Пусто)</p>
+						</article>
+						<article class="thumb">
+							<a href="03.jpg" class="image"><img src="03.jpg" alt="" /></a>
+							<h2>Портфолио</h2>
+							<p>(Пусто)</p>
+						</article>
+						<article class="thumb">
+							<a href="04.jpg" class="image"><img src="04.jpg" alt="" /></a>
+							<h2>Портфолио</h2>
+							<p>(Пусто)</p>
+						</article>
+						<article class="thumb">
+							<a href="05.jpg" class="image"><img src="05.jpg" alt="" /></a>
+							<h2>Портфолио</h2>
+							<p>(Пусто)</p>
+						</article>
+						<article class="thumb">
+							<a href="06.jpg" class="image"><img src="06.jpg" alt="" /></a>
+							<h2>Портфолио</h2>
+							<p>(Пусто)</p>
+						</article>
+						<article class="thumb">
+							<a href="07.jpg" class="image"><img src="07.jpg" alt="" /></a>
+							<h2>Портфолио</h2>
+							<p>(Пусто)</p>
+						</article>
+						<article class="thumb">
+							<a href="08.jpg" class="image"><img src="08.jpg" alt="" /></a>
+							<h2>Портфолио</h2>
+							<p>(Пусто)</p>
+						</article>
+						<article class="thumb">
+							<a href="09.jpg" class="image"><img src="09.jpg" alt="" /></a>
+							<h2>Портфолио</h2>
+							<p>(Пусто)</p>
+						</article>
+						<article class="thumb">
+							<a href="10.jpg" class="image"><img src="10.jpg" alt="" /></a>
+							<h2>Портфолио</h2>
+							<p>(Пусто)</p>
+						</article>
+						<article class="thumb">
+							<a href="11.jpg" class="image"><img src="11.jpg" alt="" /></a>
+							<h2>Портфолио</h2>
+							<p>(Пусто)</p>
+						</article>
+						<article class="thumb">
+							<a href="12.jpg" class="image"><img src="12.jpg" alt="" /></a>
+							<h2>Портфолио</h2>
+							<p>(Пусто)</p>
+						</article>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer" class="panel">
+						<div class="inner split">
+							<div>
+								<section>
+									<h2>SHINIGAMI WEB DESIGN</h2>
+									<p>Привет,если ты хочешь красивый и уникальный дизайн-макет своего будущего сайта - пиши! Макет будущего сайта - это самый первый этап зарождения сайта. Без макета не сделать хороший сайт. </p>
+								</section>
+								<section>
+									<h2>Подписывайся ...</h2>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									</ul>
+								</section>
+							</div>
+							<div>
+								<section>
+									<h2>Обратная связь</h2>
+								
+<?php
+
+if(!isset($_POST['name']) and !isset($_POST['email']) and !isset($_POST['message'])){
+ ?>
+									<form method="post" action="send.php">
+										<div class="fields">
+											<div class="field half">
+												<input type="text" name="name" id="name" placeholder="Имя" />
+											</div>
+											<div class="field half">
+												<input type="text" name="email" id="email" placeholder="Email" />
+											</div>
+											<div class="field">
+												<textarea name="message" id="message" rows="4" placeholder="Сообщение"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Отправить" class="primary" /></li>
+											<li><input type="reset" value="Сбросить" /></li>
+										</ul>
+									</form> 
+									<?php
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+
+$name = htmlspecialchars($name);
+$email = htmlspecialchars($email);
+$message = htmlspecialchars($message);
+
+$name = urldecode($name);
+$email = urldecode($email);
+$message = urldecode($message);
+
+$name = trim($name);
+$email = trim($email);
+$message = trim($message);
+
+echo $name;
+echo "<br>";
+echo $email;
+echo "<br>";
+echo $message
+
+mail("shinigamiwebstudio384qq@gmail.com", "Заявка с сайта", "Имя:".$name.". E-mail: ".$email , Сообщение: ".$message , От: example2@mail.ru \r\n");
+
+
+if (mail("shinigamiwebstudio384qq@gmail.com", "Заказ с сайта", "Имя:".$name.". E-mail: ".$email , Сообщение: ".$message, "От: example2@mail.ru \r\n"))
+ {
+    echo "Ваша заявка будет обработана и в течении суток вам напишет наш дизайнер!";
+} else {
+    echo "при отправке сообщения возникли ошибки";
+}
+
+?>
+								</section>
+							</div>
+						</div>
+					</footer>
+
+			</div>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
